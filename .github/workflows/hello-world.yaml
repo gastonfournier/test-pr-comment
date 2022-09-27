@@ -18,4 +18,4 @@ jobs:
           GITHUB_TOKEN: ${secrets.GITHUB_TOKEN}
         #if: ${{ echo github.repository || true }}
         with:
-          message: Hello world ${{ github.repository }}
+          message: Hello world ${{ github.repository }} 1 ${{ github.event_name }} 2 ${{ github.actor }} 3 ${{ github.repository_owner }}
