@@ -10,9 +10,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: echo
+        run: |
+          echo "${{ github.repository }} event_name ${{ github.event_name }} actor ${{ github.actor }} repo_owner ${{ github.repository_owner }}"
       - uses: actions/checkout@v3
       - name: Print out a comment
-        if: github.repository == 'gastonfournier/test-pr-comment'
         uses: marocchino/sticky-pull-request-comment@v2
         env:
           GITHUB_TOKEN: ${secrets.GITHUB_TOKEN}
