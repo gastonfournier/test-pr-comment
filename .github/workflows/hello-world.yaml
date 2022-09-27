@@ -12,6 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Print out a comment
+        if: github.repository == 'gastonfournier/test-pr-comment'
         uses: marocchino/sticky-pull-request-comment@v2
         env:
           GITHUB_TOKEN: ${secrets.GITHUB_TOKEN}
